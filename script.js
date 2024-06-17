@@ -30,4 +30,16 @@ group.append('rect')
                     return scale(d)                 // scales width of rectangles
                 })
                 .attr('height', barHeight - margin) // sets height of rectangles
+
+group.append('text')
+                .attr('stroke', 'white')        // sets color of text
+                .attr('text-anchor', 'end')     // moves text to the end of bars
+                .attr('x',function(d){          // sets location of text
+                    return(scale(d))
+                })
+                .attr('y',barHeight/2)
+                .attr('dy','.30em')
+                .text(function(d){
+                    return d                    // sets value of text
+                })
 }
